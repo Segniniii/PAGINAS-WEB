@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JETTMARKET</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zector&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Ufwm5f9JfrKjs2I6RQJ7GjkZISaXBlx5bkFRTch9DTZ2CXLJGAksz3tpkO5kxRiN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: sans-serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(14, 14, 14);
+            overflow-x: hidden; /* Para evitar la barra de desplazamiento horizontal */
+        }
+
+        header {
+            background-image: url('header.jpg'); /* Fondo de imagen */
+            background-size: cover;
+            background-position: center;
+            color: #000000;
+            text-align: left; /* Centrar el contenido del header */
+            margin-bottom: 100px; /* Margen inferior para dejar espacio */
+            margin-top: 250px; /* Margen inferior para dejar espacio */
+            padding: 300px;
+            animation: slideInFromLeft 1s ease-out forwards; /* Animación de entrada inicial */
+            border: 2px solid white; /* Añadir contorno blanco de 2px al header */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra al header */
+        }
+        
+
+        header h1 {
+            font-family: 'Chakra Petch';
+            font-size: 60px;
+            color: rgb(0, 0, 0);
+            text-align: left;
+            padding-top: 200px;
+            text-shadow: 0cap 0px 0px rgba(0, 0, 0, 0.5); /* Añadir sombra al texto */
+            border: 0px solid white; /* Añadir contorno blanco de 2px al texto */
+            background-color: lightblue; /* Color de fondo semitransparente */
+            display: inline-block; /* Para que el borde y la sombra se apliquen correctamente */
+            padding: 10px; /* Añadir espacio alrededor del texto */
+            margin-right: 20px;
+        }
+
+        header h1 a {
+        text-decoration: none; /* Quitar subrayado del enlace */
+        color: inherit; /* Heredar el color del texto del padre */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            font-family: 'Chakra Petch';
+            display: inline;
+            margin-right: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añadir sombra al texto del menú */
+            border: 0px solid white; /* Añadir contorno blanco de 2px al texto del menú */
+            background-color: lightblue /* de fondo semitransparente */
+            padding: 10px; /* Añadir espacio alrededor del texto */
+            display: inline-block; /* Para que el borde y la sombra se apliquen correctamente */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 1000px;
+        }
+
+        .column {
+            flex-basis: 30%;
+            text-align: left;
+        }
+
+        .producto-info {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .producto-info img {
+            margin-right: 20px;
+            max-width: 1000px; /* Ajustar el tamaño máximo de la imagen */
+            margin-left: 100px; /* Agregar margen izquierdo */
+        }
+
+        .titulo {
+            margin-left: 20px;
+            color: white;
+        }
+
+        .descripcion {
+            background-color: rgb(255, 255, 255);
+            color: #000000;
+            padding: 10px;
+            margin-top: 20px; /* Agregar espacio entre los rectángulos */
+            margin-right: 50px;
+            border-radius: 5px; /* Añadir esquinas redondeadas */
+        }
+        .boton {
+            color: #000000;
+            padding: 10px;
+            margin-top: 20px; /* Agregar espacio entre los rectángulos */
+            margin-right: 50px;
+            border-radius: 5px; /* Añadir esquinas redondeadas */
+        }
+        .precio {
+            margin-top: 40px;
+        }
+
+        .producto-info h2, .producto-info p {
+            color: rgb(0, 0, 0); /* Cambiar el color del texto a blanco */
+        }
+
+        .producto-info h2 {
+            font-size: 50px; /* Aumentar el tamaño del texto */
+        }
+
+        .producto-info p {
+            font-size: 18px; /* Aumentar el tamaño del texto */
+            margin: 5px 0; /* Reducir el margen */
+            margin-right: 50px;
+        }
+
+        .producto-info button {
+            font-size: 25px; /* Aumentar el tamaño del botón */
+        }
+
+        .descripcion-completa {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+        }
+
+        .descripcion-completa.visible {
+            opacity: 1;
+            max-height: 200px; /* Ajusta esta altura según sea necesario */
+        }
+
+        .agregar-carrito-btn {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #5699ff; /* Color de fondo 
+            color: white; /* Color de texto blanco */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .agregar-carrito-btn:hover {
+            background-color: #6845a0; /* Color de fondo verde oscuro al hacer hover */
+            transform: scale(1.05); /* Aumentar tamaño al hacer hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregar sombra al hacer hover */
+        }
+
+        .agregar-carrito-btn:active {
+            transform: scale(0.95); /* Reducir tamaño al hacer clic */
+            box-shadow: none; /* Eliminar sombra al hacer clic */
+        }
+        .titulo {
+            font-size: 50px; 
+            margin-left: 40px; /* Conserva el margen izquierdo original */
+            margin-top: 200px; /* Añade un margen superior de 20px */
+        }
+        .autor-info {
+            font-size: 30px;
+            margin-top: 500;
+            margin-left: 40px;
+            margin-right: 1000px;
+            color: #fff;
+        }
+        .footer-links h3 {
+            font-size: 30px; 
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+
+        .footer-links p {
+            font-size: 30px; 
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+
+        .header-content {
+        display: flex;
+        align-items: center;
+        position: absolute; /* Establece el posicionamiento absoluto en el contenido del encabezado */
+        top: 15%; /* Coloca el contenido en la mitad superior del encabezado */
+        left: 50%; /* Centra horizontalmente el contenido */
+        transform: translate(-50%, -50%); /* Centra verticalmente el contenido */
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho del encabezado */
+        }
+        .header-content h1 {
+        margin-right: 20px; /* Añade un espacio entre el título y el menú */
+        margin-left: 70px;
+        }
+
+        
+
+    </style>
+</head>
+
+<header>
+    <div class="header-content">
+        <img src="cart.svg" alt="Carrito de compras" style="position: absolute; top: 50%; transform: translateY(-50%); right: 70px; width: 30px; height: 30px; filter: brightness(0) invert(1);">
+        <h1><a href="index.html">JettMarket</a></h1>
+        <nav>
+            <ul>
+                <li><a href=index.html>Inicio</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href=nosotros.html>Nosotros</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <div class="producto-info">
+            <img src="producto1.jpg" alt="Producto 3">
+            <div class="info">
+                <h1 style="color: white;">Mousepad 1</h1>
+                <div class="descripcion">
+                    <p id="descripcion-text" style="font-size: 24px; color: rgb(0, 0, 0); cursor: pointer;">Descripción del Mousepad</p>
+                    <div id="descripcion-completa" class="descripcion-completa hidden">
+                        <p>Confeccionado con materiales de primera calidad, el Mousepad JetMarket HydroGuard presenta una superficie waterproof que repele cualquier líquido, asegurando una durabilidad excepcional y una limpieza sin complicaciones. Ya sea que estés inmerso en largas sesiones de trabajo o en emocionantes partidas de juego, este mousepad está diseñado para resistir cualquier desafío.</p>
+                    </div>
+                </div>
+                <div class="descripcion">
+                    <p id="mantenimiento-text" style="font-size: 24px; color: rgb(0, 0, 0); cursor: pointer;">Cómo lavar/mantenimiento</p>
+                    <div id="mantenimiento-completo" class="descripcion-completa hidden">
+                        <p>Para lavar un mousepad de manera efectiva, es recomendable usar un cepillo suave para evitar dañar la superficie. Primero, humedece el mousepad con agua tibia y aplica un detergente suave o jabón neutro sobre las áreas manchadas. Luego, con movimientos suaves y circulares, frota el mousepad con el cepillo suave, prestando especial atención a las zonas más sucias. Una vez que hayas eliminado las manchas, enjuaga bien el mousepad con agua limpia para eliminar cualquier residuo de jabón. Finalmente, déjalo secar al aire libre en una superficie plana. Evita retorcer o exprimir el mousepad, ya que esto puede deformarlo. Este método de limpieza garantiza que tu mousepad quede limpio y fresco sin dañar sus materiales.</p>
+                    </div>
+                </div>
+                <div class="precio">
+                    <p style="font-size: 35px; color: rgb(255, 255, 255);">Precio: $XX.XX</p>
+                </div>
+                <div class="boton">
+                    <button class="agregar-carrito-btn">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <img class="src" src="felipemena.jpg" alt="Felipe Mena" style="float: right; margin: 10px; margin-top: 200px; margin-right: 70px; width: 750px;">
+        <h1 class="titulo">Información del Autor</h1>
+        <p class="autor-info">Con una mente creativa que ha florecido desde temprana edad, Felipe Mena, un joven talentoso de 19 años de Escazú, ha llevado el arte del diseño a nuevas alturas. Con una pasión arraigada en el dibujo desde los 10 años, ha cultivado un estilo distintivo que ahora brilla en los mousepads de tu compañía. Inspirado por la fusión de la naturaleza tropical de su hogar con elementos modernos y futuristas, sus diseños cautivan y sorprenden. Cada trazo refleja su amor por el arte y su compromiso con la excelencia estética. En sus creaciones, encontrarás una amalgama de colores vibrantes, formas orgánicas y una narrativa visual que invita a la exploración. Felipe Mena no solo diseña mousepads; crea experiencias visuales que despiertan la imaginación y dan vida a tu espacio de trabajo.</p>
+        
+        
+    </main>
+
+    <footer id="footer">
+        <div class="column">
+            <h3>Social Links</h3>
+            
+            <p>Contact: JettMarket@gmail.com</p>
+            <p>Shipping Info:Existen hasta 5 días para hacer la entrega a cualquier parte de Costa Rica, a otras partes del mundo puede subir hasta los 30 días.</p>
+            <p>Return Policy:Existen 30 días hábiles para hacer cualquier reclamo por devolución.</p>
+            <a href="PrivacyPolicy.html" style="text-decoration: none; color: rgb(255, 255, 255);"><p>Privacy Policy</p></a>
+        </div>
+        <div class="column">
+            <h3>Our Mission</h3>
+            <p>Crear mousepads de la más alta calidad, diseñados por artistas nacionales de Costa Rica, para ofrecer a nuestros clientes productos únicos y duraderos que inspiren creatividad y expresión personal.</p>
+        </div>
+        <div class="column">
+            <h3>Newsletter</h3>
+            <p>Stay up to date with the new collections, products and exclusive offers.</p>
+            <div class="subscribe-form">
+                <input type="email" placeholder="Your email">
+                <button>Subscribe to Our Newsletter</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var descripcionText = document.getElementById("descripcion-text");
+            var descripcionCompleta = document.getElementById("descripcion-completa");
+            var mantenimientoText = document.getElementById("mantenimiento-text");
+            var mantenimientoCompleto = document.getElementById("mantenimiento-completo");
+
+            descripcionText.addEventListener("click", function() {
+                descripcionCompleta.classList.toggle("visible");
+                descripcionCompleta.classList.toggle("hidden");
+            });
+
+            mantenimientoText.addEventListener("click", function() {
+                mantenimientoCompleto.classList.toggle("visible");
+                mantenimientoCompleto.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+</html>

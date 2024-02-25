@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JETTMARKET</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zector&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Ufwm5f9JfrKjs2I6RQJ7GjkZISaXBlx5bkFRTch9DTZ2CXLJGAksz3tpkO5kxRiN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+   
+   <style>
+        body {
+            font-family: sans-serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(14, 14, 14);
+            overflow-x: hidden; /* Para evitar la barra de desplazamiento horizontal */
+            color: #fff;
+        }
+
+        header {
+            color: #000000;
+            text-align: left; /* Centrar el contenido del header */
+            margin-bottom: 20px; /* Margen inferior para dejar espacio */
+            margin-top: 250px; /* Margen inferior para dejar espacio */
+            padding: 300px;
+            animation: slideInFromLeft 1s ease-out forwards; /* Animación de entrada inicial */
+        }
+        
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        header h1 {
+            font-family: 'Chakra Petch';
+            font-size: 60px;
+            color: rgb(0, 0, 0);
+            text-align: left;
+            padding-top: 200px;
+            text-shadow: 0cap 0px 0px rgba(0, 0, 0, 0.5); /* Añadir sombra al texto */
+            border: 0px solid white; /* Añadir contorno blanco de 2px al texto */
+            background-color: lightblue; /* Color de fondo semitransparente */
+            display: inline-block; /* Para que el borde y la sombra se apliquen correctamente */
+            padding: 10px; /* Añadir espacio alrededor del texto */
+            margin-right: 20px;
+        }
+
+        header h1 a {
+        text-decoration: none; /* Quitar subrayado del enlace */
+        color: inherit; /* Heredar el color del texto del padre */
+
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            margin-top: 20ssspx;
+        }
+
+        nav ul li {
+            text-decoration: none;
+            font-family: 'Chakra Petch';
+            display: inline;
+            margin-right: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añadir sombra al texto del menú */
+            border: 0px solid white; /* Añadir contorno blanco de 2px al texto del menú */
+            background-color: lightblue /* de fondo semitransparente */
+            padding: 10px; /* Añadir espacio alrededor del texto */
+            display: inline-block; /* Para que el borde y la sombra se apliquen correctamente */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            text-decoration: none;
+            cursor: pointer; /* Cambio de cursor a puntero */
+        }
+        
+
+        main {
+            font-display: center;
+            font-family: 'Chakra Petch';
+            color: white;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .Quienes {
+            font-family: 'Chakra Petch';
+            position: absolute; /* Posiciona el párrafo de manera absoluta dentro del contenedor del encabezado */
+            top: 20%; /* Coloca el párrafo justo debajo del encabezado */
+            left: 2%; /* Alinea el párrafo a la izquierda del contenedor */
+            max-width: 70%; /* Ocupa todo el ancho disponible */
+            padding-top: 20px; /* Espacio entre el encabezado y el párrafo */
+            margin: left 1000px;
+            animation: slideInFromLeft 1s ease-out forwards; /* Animación de entrada inicial */
+        }
+        
+
+
+        footer {
+        background-color: #000000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex; /* Establecer el contenedor como flexbox */
+        }
+
+        .column {
+        flex-basis: 30%; /* Cada columna ocupa el 30% del ancho */
+        padding: 0 20px;
+        text-align: left;
+        }
+
+        .footer-links h3 {
+        font-size: 30px; 
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        }
+
+        .footer-links p {
+        font-size: 30px; 
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        }
+
+
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .fadeIn.is-visible {
+            opacity: 1;
+        }
+
+        .header-content {
+        display: flex;
+        align-items: center;
+        position: absolute; /* Establece el posicionamiento absoluto en el contenido del encabezado */
+        top: -20%; /* Coloca el contenido en la mitad superior del encabezado */
+        left: 50%; /* Centra horizontalmente el contenido */
+        transform: translate(-50%, -50%); /* Centra verticalmente el contenido */
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho del encabezado */
+        }
+        .header-content h1 {
+        margin-right: 20px; /* Añade un espacio entre el título y el menú */
+        margin-left: 70px;
+        }
+        
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="cart.svg" alt="Carrito de compras" style="position: absolute; top: 50%; transform: translateY(-50%); right: 70px; width: 30px; height: 30px; filter: brightness(0) invert(1);">
+            <h1><a href="index.html">JettMarket</a></h1>
+            <nav>
+                <ul>
+                    <li><a href=index.html>Inicio</a></li>
+                    <li><a href="index.html#productos">Productos</a></li>
+                    <li><a href=nosotros.html>Nosotros</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="Quienes">
+        <h1>Política de Privacidad</h1>
+        <p>Última actualización: 2/22/2024</p>
+        <p>JettMarket opera la página de JettMarket.net. Esta página le informa sobre nuestras políticas con respecto a la recopilación, el uso y la divulgación de información personal que recibimos de los usuarios del Sitio. Utilizamos su información personal solo para mejorar el Sitio y brindar un mejor servicio. Al utilizar el Sitio, usted acepta la recopilación y el uso de información de acuerdo con esta política. Recopilación y Uso de Información Mientras utiliza nuestro Sitio, podemos solicitarle que nos proporcione cierta información de identificación personal que puede incluir, entre otros, su nombre, dirección de correo electrónico, dirección postal y número de teléfono. La información personal que recopilamos se utilizará para contactarlo o identificarlo. Seguridad La seguridad de su información personal es importante para nosotros, pero recuerde que ningún método de transmisión a través de Internet o método de almacenamiento electrónico es 100% seguro. Si bien nos esforzamos por utilizar medios comercialmente aceptables para proteger su información personal, no podemos garantizar su seguridad absoluta. Cambios en la Política de Privacidad Esta Política de Privacidad es efectiva a partir de la fecha de la última actualización y permanecerá en vigencia excepto con respecto a cualquier cambio en sus disposiciones en el futuro, que entrarán en vigencia inmediatamente después de ser publicadas en esta página. Nos reservamos el derecho de actualizar o cambiar nuestra Política de Privacidad en cualquier momento y usted debe consultar esta Política de Privacidad periódicamente. Su uso continuado del Servicio después de que publiquemos cualquier modificación a la Política de Privacidad en esta página constituirá su reconocimiento de las modificaciones y su consentimiento a cumplir y estar sujeto a la Política de Privacidad modificada. Contacto Si tiene alguna pregunta sobre esta Política de Privacidad, por favor contáctenos.</p>
+    </div>
+
+    
+
+    <main>
+        
+
+        <footer id="footer">
+            <div class="column">
+                <h3>Social Links</h3>
+                
+                <p>Contact: JettMarket@gmail.com</p>
+                <p>Shipping Info:Existen hasta 5 días para hacer la entrega a cualquier parte de Costa Rica, a otras partes del mundo puede subir hasta los 30 días.</p>
+                <p>Return Policy:Existen 30 días hábiles para hacer cualquier reclamo por devolución.</p>
+                <a href="PrivacyPolicy.html" style="text-decoration: none; color: rgb(255, 255, 255);"><p>Privacy Policy</p></a>
+            </div>
+            <div class="column">
+                <h3>Our Mission</h3>
+                <p>Crear mousepads de la más alta calidad, diseñados por artistas nacionales de Costa Rica, para ofrecer a nuestros clientes productos únicos y duraderos que inspiren creatividad y expresión personal.</p>
+            </div>
+            <div class="column">
+                <h3>Newsletter</h3>
+                <p>Stay up to date with the new collections, products and exclusive offers.</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Your email">
+                    <button>Subscribe to Our Newsletter</button>
+                </div>
+            </div>
+        </footer>
+    
+    
+
+    <script>
+        // Función para animar elementos cuando se revelan en el viewport
+        function fadeInElements() {
+            const elements = document.querySelectorAll('.fadeIn');
+            elements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('is-visible');
+                }
+            });
+        }
+
+        // Función para verificar si un elemento está dentro del viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Animar elementos al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            fadeInElements();
+        });
+
+        // Animar elementos al hacer scroll
+        document.addEventListener('scroll', function() {
+            fadeInElements();
+        });
+    </script>
+</body>
+</html>
